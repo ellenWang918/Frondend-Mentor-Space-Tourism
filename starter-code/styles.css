@@ -1,0 +1,145 @@
+/* import main font */
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+
+/* import nav font */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap');
+/* import body font  */
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
+:root {
+    --white: #FFFFFF;
+    --glass-effect:rgba(255, 255, 255, 0.04);
+    --line: rgba(255, 255, 255, 0.185);
+    --text-blue: #D0D6F9;
+    --space-black: #0B0D17;
+}
+
+* {
+    font-family: 'Bellefair', serif;
+    margin: 0;
+    padding: 0;
+    color: var(--white);
+}
+
+.background-img {
+    position: absolute;
+    background-image: url(assets/home/background-home-desktop.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+    max-width: 100%;
+
+}
+
+#logo {
+    width: 60px;
+    height: 60px;
+    padding: 1.5% 1.5% 1.5% 4%;
+}
+
+#line {
+    width: 33%;
+    height: 1px;
+    background-color: var(--line);
+    z-index: 5;
+    position: fixed;
+    margin-left: 12%;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--glass-effect);
+    backdrop-filter: blur(50px);
+    padding: 0 2rem;
+    width: 53%;
+}
+
+#bold-nav {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+}
+
+a {
+    text-decoration:none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.nav-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 2.7px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 0 1rem;
+    margin: 2.5rem;
+}
+
+.text-cap {
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 4.72px;
+    font-size: 1.91rem;
+    text-transform: uppercase;
+    color: var(--text-blue);
+    margin-bottom: 2rem;
+}
+
+.title-large {
+    text-transform: uppercase;
+    font-size: 10rem;
+    font-weight: normal;
+    margin-bottom: 1.5rem
+}
+
+.texts-normal {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: var(--text-blue)
+}
+
+.index-container {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+.text-container {
+    width: 25%;
+}
+
+.button {
+    color: var(--space-black);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+    width: 280px;
+    height: 280px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    margin: 5% 5% 0 0;
+}
+
+.button:hover {
+    border:rgba(255, 255, 255, 1) solid 5px;
+}
