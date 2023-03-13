@@ -8,10 +8,13 @@
 
 :root {
     --white: #FFFFFF;
+    --para-white: rgba(255, 255, 255, 0.205);
+    --hover-white:rgba(255, 255, 255, 0.5);
     --glass-effect:rgba(255, 255, 255, 0.04);
     --line: rgba(255, 255, 255, 0.185);
     --text-blue: #D0D6F9;
     --space-black: #0B0D17;
+    --none-color: rgba(255, 255, 255, 0);
 }
 
 * {
@@ -19,6 +22,7 @@
     margin: 0;
     padding: 0;
     color: var(--white);
+    /* outline: red 1px solid; */
 }
 
 .background-img {
@@ -61,7 +65,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
     background-color: var(--glass-effect);
     backdrop-filter: blur(50px);
@@ -79,7 +83,12 @@ a {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    border-bottom: var(--para-white) 3px solid;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:active {
+    border-bottom: var(--white) 3px solid;
 }
 
 .nav-text {
@@ -87,14 +96,19 @@ nav a:hover {
     letter-spacing: 2.7px;
     font-size: 1.5rem;
     text-transform: uppercase;
-    padding: 0 1rem;
-    margin: 2.5rem;
+    padding: 2.5rem 0 2.5rem 0;
+    margin: 0 2rem 0 2rem;
+    border-bottom: var(--none-color) 3px solid;
+}
+
+.nav-text:last-child {
+    margin-right: 5rem;
 }
 
 .text-cap {
     font-family: 'Barlow Condensed', sans-serif;
-    letter-spacing: 4.72px;
-    font-size: 1.91rem;
+    letter-spacing: 4.75px;
+    font-size: 1.6rem;
     text-transform: uppercase;
     color: var(--text-blue);
     margin-bottom: 2rem;
@@ -102,7 +116,7 @@ nav a:hover {
 
 .title-large {
     text-transform: uppercase;
-    font-size: 10rem;
+    font-size: 9.5rem;
     font-weight: normal;
     margin-bottom: 1.5rem
 }
@@ -116,18 +130,26 @@ nav a:hover {
 
 .index-container {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: 70vh;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 5%;
 }
 
 .text-container {
+    position: relative;
     width: 25%;
+    left: 15%;
 }
 
-.button {
+.button-container {
+    position: relative;
+    right: 25%;
+}
+
+.btn {
     color: var(--space-black);
     text-transform: uppercase;
     text-align: center;
@@ -135,11 +157,30 @@ nav a:hover {
     width: 280px;
     height: 280px;
     border: none;
-    border-radius: 100%;
+    border-radius: 50%;
     cursor: pointer;
-    margin: 5% 5% 0 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
-.button:hover {
-    border:rgba(255, 255, 255, 1) solid 5px;
+.btn:hover + .btn-active{
+    display: block;
+    opacity: 1;
+}
+
+.btn-active {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background-color: var(--para-white);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
