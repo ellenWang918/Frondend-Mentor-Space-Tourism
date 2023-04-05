@@ -69,7 +69,7 @@ nav {
     align-items: center;
     background-color: var(--glass-effect);
     backdrop-filter: blur(50px);
-    padding: 0 2rem;
+    padding: 0 3rem;
     width: 53%;
 }
 
@@ -88,6 +88,10 @@ nav a:hover {
 }
 
 nav a:active {
+    border-bottom: var(--white) 3px solid;
+}
+
+.nav-active {
     border-bottom: var(--white) 3px solid;
 }
 
@@ -134,19 +138,17 @@ nav a:active {
     width: 100%;
     height: 70vh;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-top: 5%;
 }
 
 .text-container {
     position: relative;
     width: 25%;
-    left: 15%;
 }
 
-.button-container {
+.btn-container {
     position: relative;
-    right: 25%;
 }
 
 .btn {
@@ -154,33 +156,91 @@ nav a:active {
     text-transform: uppercase;
     text-align: center;
     font-size: 2rem;
-    width: 280px;
-    height: 280px;
+    width: 8em;
+    height: 8em;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    /* position: relative; */
+    position: fixed;
+    bottom: 10%;
+    right:10%;
     transform: translate(-50%, -50%);
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn:hover + .btn-active{
-    display: block;
+    display: flex;
     opacity: 1;
 }
 
 .btn-active {
     position: absolute;
-    width: 420px;
-    height: 420px;
+    width: 25em;
+    height: 25em;
     border-radius: 50%;
     background-color: var(--para-white);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 47%;
+    right: 2.5%;
     z-index: 1;
     opacity: 0;
     transition: all 0.3s ease;
+}
+
+/* media selector need to change later */
+@media (max-width: 1500px) and (orientation: portrait) {
+    .background-img {
+        position: absolute;
+        background-image: url(assets/home/background-home-tablet.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #line {
+        display: none;
+    }
+
+    #bold-nav {
+        display: none;
+    }
+
+    header {
+        margin: 0;
+    }
+
+    .nav-text {
+        padding: 2.8rem 0 2.8rem 0;
+        font-size: 0.5rem;
+    }
+
+    .nav-text:last-child {
+        margin-right: 1rem;
+    }
+
+    .index-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 5%;
+    }
+
+    .text-container {
+        position: relative;
+        width: 80%;
+    }
+
+    .texts-normal {
+        text-align: center;
+    }
+
+    .btn  {
+        display:none;
+    }
 }
