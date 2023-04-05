@@ -27,7 +27,7 @@
 
 .background-img {
     position: absolute;
-    background-image: url(assets/home/background-home-desktop.jpg);
+    background-image: url(starter-code/assets/home/background-home-desktop.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -194,7 +194,7 @@ nav a:active {
 @media (max-width: 1500px) and (orientation: portrait) {
     .background-img {
         position: absolute;
-        background-image: url(assets/home/background-home-tablet.jpg);
+        background-image: url(starter-code/assets/home/background-home-tablet.jpg);
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-size: cover;
