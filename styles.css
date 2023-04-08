@@ -43,7 +43,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 3%;
+    margin-top: 2.5%;
     max-width: 100%;
 
 }
@@ -60,15 +60,15 @@ header {
     background-color: var(--line);
     z-index: 5;
     position: fixed;
-    margin-left: 12%;
+    margin-left: 10%;
 }
 
 nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--glass-effect);
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(30px);
     padding: 0 3rem;
     width: 53%;
 }
@@ -91,22 +91,26 @@ nav a:active {
     border-bottom: var(--white) 3px solid;
 }
 
-.nav-active {
+#nav-active {
     border-bottom: var(--white) 3px solid;
 }
 
 .nav-text {
     font-family: 'Barlow Condensed', sans-serif;
     letter-spacing: 2.7px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-transform: uppercase;
-    padding: 2.5rem 0 2.5rem 0;
-    margin: 0 2rem 0 2rem;
+    padding: 2.3rem 0;
+    margin: 0 1rem;
     border-bottom: var(--none-color) 3px solid;
 }
 
+.nav-text:first-child {
+    margin-left: 9%;
+}
+
 .nav-text:last-child {
-    margin-right: 5rem;
+    margin-right: 9%;
 }
 
 .text-cap {
@@ -120,14 +124,14 @@ nav a:active {
 
 .title-large {
     text-transform: uppercase;
-    font-size: 9.5rem;
+    font-size: 9rem;
     font-weight: normal;
     margin-bottom: 1.5rem
 }
 
 .texts-normal {
     font-family: 'Barlow', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 2rem;
     color: var(--text-blue)
 }
@@ -138,13 +142,13 @@ nav a:active {
     width: 100%;
     height: 70vh;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: 5%;
 }
 
 .text-container {
-    position: relative;
-    width: 25%;
+    width: 30%;
+    margin: 10%;
 }
 
 .btn-container {
@@ -153,6 +157,7 @@ nav a:active {
 
 .btn {
     color: var(--space-black);
+    background-color: var(--white);
     text-transform: uppercase;
     text-align: center;
     font-size: 2rem;
@@ -161,11 +166,9 @@ nav a:active {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    /* position: relative; */
     position: fixed;
-    bottom: 10%;
-    right:10%;
-    transform: translate(-50%, -50%);
+    bottom: 20%;
+    right: 12%;
     z-index: 2;
     display: flex;
     justify-content: center;
@@ -190,7 +193,7 @@ nav a:active {
     transition: all 0.3s ease;
 }
 
-/* media selector need to change later */
+/* Responsive - Tablet */
 @media (max-width: 1500px) and (orientation: portrait) {
     .background-img {
         position: absolute;
@@ -206,6 +209,16 @@ nav a:active {
 
     #bold-nav {
         display: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: var(--glass-effect);
+        backdrop-filter: blur(2px);
+        padding: 0 3rem;
+        width: 53%;
     }
 
     header {
@@ -232,15 +245,73 @@ nav a:active {
     }
 
     .text-container {
-        position: relative;
+        text-align: center;
         width: 80%;
+        margin: 5%;
+    }
+
+    .text-cap {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .title-large {
+        font-size: 10rem;
+        margin-bottom: 1rem;
     }
 
     .texts-normal {
-        text-align: center;
+        font-size: 1rem;
+        padding: 0 5.5rem;
+        line-height: 1.8rem;
     }
 
     .btn  {
         display:none;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 600px) and (orientation: portrait) {
+    .background-img {
+        position: absolute;
+        background-image: url(starter-code/assets/home/background-home-mobile.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    nav {
+        display: none;
+    }
+
+    header {
+        margin: 5%;
+    }
+
+     #logo {
+        width: 50px;
+        height: 50px;;
+     }
+
+    .text-container {
+        text-align: center;
+        width: 90%;
+    }
+
+    .text-cap {
+        font-size: 1rem;
+    }
+    .title-large {
+        font-size: 6rem;
+    }
+
+    .texts-normal {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .btn  {
+        display: none;
     }
 }
