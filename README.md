@@ -70,4 +70,4 @@ const proudOfThisFunc = () => {
 ### Useful resources
 
 - [MDN Web Docs](https://developer.mozilla.org/en-US/) - The best doc for new web developers.
-- [The Markdown Guide](https://www.markdownguide.org/) - Helo with the markdown formatting.
+- [The Markdown Guide](https://www.markdownguide.org/) - Help with the markdown formatting.
